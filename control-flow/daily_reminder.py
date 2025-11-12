@@ -1,13 +1,11 @@
 # daily_reminder.py
 
-print("=== Personal Daily Reminder ===")
-
-# 1. Prompt for user input
+# 1. Prompt for user input exactly as expected
 task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# 2. Determine reminder using match-case
+# 2. Match-case for priority
 match priority:
     case "high":
         reminder = f"'{task}' is a high priority task"
@@ -18,11 +16,11 @@ match priority:
     case _:  # default if input is unexpected
         reminder = f"'{task}' has unspecified priority"
 
-# 3. Modify reminder if the task is time-bound
+# 3. If statement for time-bound modification
 if time_bound == "yes":
     reminder += " that requires immediate attention today!"
 else:
     reminder += "."
 
-# 4. Display the reminder in the exact format expected
-print(f"\nReminder: {reminder}")
+# 4. Print exactly in the format expected
+print(f"Reminder: {reminder}")
